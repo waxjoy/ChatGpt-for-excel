@@ -1,4 +1,4 @@
-Const api_key = "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"
+Const api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 Const url = "https://api.openai.com/v1/completions"
 
 Sub ChatGpt()
