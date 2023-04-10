@@ -1,0 +1,28 @@
+Const api_key = "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"
+Const url = "https://api.openai.com/v1/completions"
+
+Sub ChatGpt()
+    
+    Dim objChat As Object
+    Dim parameters As String
+    Dim results As String
+        
+    parameters = "{""prompt"":""" & "请讲个笑话？" & """,""model"":""text-davinci-003"",""max_tokens"":2048}"
+    
+    'Debug.Print parameters
+    
+    Set objChat = CreateObject("MSXML2.XMLHTTP")
+    
+    With objChat
+        .Open "POST", url, False
+        .setRequestHeader "Content-Type", "application/json"
+        .setRequestHeader "Authorization", "Bearer " & api_key
+        .send parameters
+    End With
+    
+    'results = objChat.ResponseText
+    
+    Debug.Print objChat.Status
+    Debug.Print objChat.responseText
+    
+End Sub
